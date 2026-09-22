@@ -3,16 +3,18 @@
 /* p-ийн зааж буй Queue-д x утгыг хийнэ */
 void q_push(Queue *p, int x)
 {
-        p->s_arr[p->s_len]=x;
-        p->s_len++;
+        p->q_arr[p->q_len]=x;
+        p->q_len++;
         /* Энд оруулах үйлдлийг хийнэ үү */
 }
 
 /* p-ийн зааж буй Queue-с гаргана */
 void q_pop(Queue *p)
 {
-        if(p->s_len>0)
-                p->s_len--;
+for(int i=0; i< p->q_len-1; i++ ){
+p->q_arr[i]=p->q_arr[i+1];
+}
+        p->q_len --;
         /* Энд гаргах үйлдлийг хийнэ үү */
 }
 
