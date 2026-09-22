@@ -4,7 +4,7 @@
 void l_push_back(List *p, int x)
 {
 	p->l_arr[p->l_len]=x;
-	p->l_len;
+	p->l_len++;
 	/* Энд оруулах үйлдлийг хийнэ үү */
 }
 
