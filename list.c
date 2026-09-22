@@ -48,7 +48,7 @@ void l_pop_front(List *p)
 		for(int i=0; i<p->l_len-1; i++){
 			p->l_arr[i]=p->l_arr[i+1];
 		}
-		
+		p->l_len--;
 	}
 	/* Энд гаргах үйлдлийг хийнэ үү */
 }
@@ -56,9 +56,8 @@ void l_pop_front(List *p)
 /* p-ийн зааж буй List-н төгсгөлөөс гаргана */
 void l_pop_back(List *p)
 {
-	if(p->l_len>0){
+	if(p->l_len>0)
 		p->l_len--;
-	}
 	/* Энд гаргах үйлдлийг хийнэ үү */
 }
 
@@ -68,14 +67,15 @@ void l_pop_back(List *p)
  */
 void l_erase(List *p, int pos)
 {
-	if(pos<0 || pos >= p->l_lan)
+	if(pos<0 || pos >= p->l_len)
 		return;
 	for(int i=pos; i<p->l_len-1; i++){
 		p->l_arr[i]= p->l_arr[i+1];
 	}
+	p->l_len--;
 	/* Энд гаргах үйлдлийг хийнэ үү */
 }
-p->l_len--;
+
 
 /* p-ийн зааж буй List-н утгуудыг хэвлэнэ */
 void l_print(List *p)
@@ -94,7 +94,7 @@ int l_search(List *p, int x)
 {
 	for (int i=0; i< p->l_len; i++){
 		if(p->l_arr[i]==x)
-			return -1;
+			return i;
 	}
-	
+	return -1;
 }
