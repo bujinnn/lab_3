@@ -11,11 +11,12 @@ void q_push(Queue *p, int x)
 /* p-ийн зааж буй Queue-с гаргана */
 void q_pop(Queue *p)
 {
+if(p-q_len >0){
 for(int i=0; i< p->q_len-1; i++ ){
 p->q_arr[i]=p->q_arr[i+1];
 }
         p->q_len --;
-        /* Энд гаргах үйлдлийг хийнэ үү */
+}/* Энд гаргах үйлдлийг хийнэ үү */
 }
 
 /* p-ийн зааж буй Queue-н утгуудыг хэвлэнэ */
