@@ -3,6 +3,8 @@
 /* p-ийн зааж буй List-д x утгыг төгсгөлд хийнэ */
 void l_push_back(List *p, int x)
 {
+	p->l_arr[p->l_len]=x;
+	p->l_len;
 	/* Энд оруулах үйлдлийг хийнэ үү */
 }
 
@@ -11,6 +13,11 @@ void l_push_back(List *p, int x)
  */
 void l_push_front(List *p, int x)
 {
+	for(int i=p->l_len; i>0; i--){
+	p->l_arr[i]=p->l_arr[i-1];
+	}
+	p->l_arr[0]=x;
+	p->l_len++;
 	/* Энд оруулах үйлдлийг хийнэ үү */
 }
 
@@ -21,6 +28,13 @@ void l_push_front(List *p, int x)
  */
 void l_insert(List *p, int x, int pos)
 {
+	if (pos> p->l_len)
+		pos= p->l_len;
+	for (int i= p->l_len; i>pos; i--){
+		p->l_arr[i]=p->l_arr[i-1];
+	}
+	p->l_arr[pos]=x;
+	p->l_len++;
 	/* Энд оруулах үйлдлийг хийнэ үү */
 }
 
